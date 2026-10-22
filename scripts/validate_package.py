@@ -5,8 +5,10 @@ import copy
 import hashlib
 import json
 import re
+import struct
 from pathlib import Path
 from urllib.parse import unquote, urlparse
+from xml.etree import ElementTree
 
 import yaml
 from jsonschema import Draft202012Validator
@@ -55,7 +57,23 @@ def validate() -> dict:
     check('standalone skill includes same license', (SKILL / 'LICENSE').read_bytes() == license_data)
     check('standalone skill attribution preserved', (SKILL / 'NOTICE.md').read_bytes() == (ROOT / 'NOTICE.md').read_bytes())
     check('all upstream files accounted for', len(provenance['files']) == 22 and all(r['status'] == 'verified' for r in provenance['files']))
-    check('original visual resources excluded', all(not r['redistributed'] for r in provenance['files'] if r['path'].startswith('assets/')) and not (SKILL / 'assets').exists())
+    upstream_visuals = [r for r in provenance['files'] if r['path'].startswith('assets/')]
+    check('original visual resources excluded', all(not r['redistributed'] and not (SKILL / r['path']).exists() for r in upstream_visuals))
+    skill_ui = agent['interface']
+    plugin_ui = manifest['extensions']['com.openai']['interface']
+    check('portable and compatibility UI agree', plugin_ui == legacy['interface'])
+    check('plugin and skill card labels agree', plugin_ui['displayName'] == skill_ui['display_name'] and plugin_ui['shortDescription'] == skill_ui['short_description'])
+    check('brand colors have valid hex syntax', all(re.fullmatch(r'#[0-9A-Fa-f]{6}', color) for color in [skill_ui['brand_color'], plugin_ui['brandColor'], plugin_ui['brandColorDark']]) and skill_ui['brand_color'] == plugin_ui['brandColor'])
+    for field in ['icon_small', 'icon_large']:
+        icon_path = (SKILL / skill_ui[field]).resolve()
+        check(field + ' exists inside skill', icon_path.is_relative_to(SKILL) and icon_path.is_file())
+    png = (SKILL / skill_ui['icon_small']).read_bytes()
+    check('small icon is square 400px PNG', png[:8] == b'\x89PNG\r\n\x1a\n' and struct.unpack('>II', png[16:24]) == (400, 400))
+    svg = ElementTree.fromstring((SKILL / skill_ui['icon_large']).read_bytes())
+    check('SVG icon has no active or external content', svg.tag == '{http://www.w3.org/2000/svg}svg' and all(element.tag.split('}')[-1] not in {'script', 'foreignObject', 'image', 'use'} and not any(key.split('}')[-1].lower().startswith('on') or key.split('}')[-1] == 'href' for key in element.attrib) for element in svg.iter()))
+    for field in ['logo', 'composerIcon']:
+        icon_path = (ROOT / plugin_ui[field]).resolve()
+        check('plugin ' + field + ' resolves inside package', icon_path.is_relative_to(ROOT) and icon_path.is_file())
     json_files = list(ROOT.rglob('*.json'))
     for path in json_files:
         if '.git' not in path.parts:

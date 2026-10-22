@@ -1,7 +1,23 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "chatgpt-planner-work-codex",
-  "version": "1.0.0",
-  "description": "ChatGPT 普通聊天和 Work 负责规划与复审，Codex 负责实施与验证。",
-  "license": "MIT"
+  "version": "1.0.1",
+  "description": "在 ChatGPT 和 Work 中规划与复审，交给 Codex 实施并验证",
+  "license": "MIT",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "项目规划助手 · Codex",
+        "shortDescription": "在 ChatGPT 和 Work 中规划与复审，交给 Codex 实施并验证",
+        "longDescription": "梳理目标、拆分任务和明确验收标准，由 Codex 实施并返回证据，再按证据复审。",
+        "developerName": "cc-yyc",
+        "category": "Productivity",
+        "capabilities": [],
+        "brandColor": "#2563EB",
+        "brandColorDark": "#60A5FA",
+        "composerIcon": "./skills/chatgpt-planner-work-codex/assets/planner-icon.png",
+        "logo": "./skills/chatgpt-planner-work-codex/assets/planner-icon.svg"
+      }
+    }
+  }
 }

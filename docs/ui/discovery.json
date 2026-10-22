@@ -1,0 +1,47 @@
+{
+  "original_local_result_sha256": "0714b01406e0bf2737b814f082f24403059ce68b251917d531a712d863b5413b",
+  "path_normalization": "Absolute machine paths replaced with named placeholders; interface values retained.",
+  "result": {
+    "status": "PASS",
+    "protocol": "Codex app-server skills/list",
+    "binary": "<DESKTOP_CODEX>/codex.exe",
+    "created_chat_or_turn": false,
+    "scopes": [
+      {
+        "cwd": "<WORKSPACE>",
+        "name": "chatgpt-planner-work-codex",
+        "path": "<SKILL_ROOT>/SKILL.md",
+        "pluginId": null,
+        "interface": {
+          "displayName": "项目规划助手 · Codex",
+          "shortDescription": "在 ChatGPT 和 Work 中规划与复审，交给 Codex 实施并验证",
+          "iconSmall": "<SKILL_ROOT>/assets/planner-icon.png",
+          "iconLarge": "<SKILL_ROOT>/assets/planner-icon.svg",
+          "iconSmallUrl": null,
+          "iconLargeUrl": null,
+          "brandColor": "#2563EB",
+          "defaultPrompt": "使用 $chatgpt-planner-work-codex 按当前运行端和我的意图，规划、实施或复审这个项目任务。"
+        },
+        "related_errors": []
+      },
+      {
+        "cwd": "<PLUGIN_ROOT>",
+        "name": "chatgpt-planner-work-codex",
+        "path": "<SKILL_ROOT>/SKILL.md",
+        "pluginId": null,
+        "interface": {
+          "displayName": "项目规划助手 · Codex",
+          "shortDescription": "在 ChatGPT 和 Work 中规划与复审，交给 Codex 实施并验证",
+          "iconSmall": "<SKILL_ROOT>/assets/planner-icon.png",
+          "iconLarge": "<SKILL_ROOT>/assets/planner-icon.svg",
+          "iconSmallUrl": null,
+          "iconLargeUrl": null,
+          "brandColor": "#2563EB",
+          "defaultPrompt": "使用 $chatgpt-planner-work-codex 按当前运行端和我的意图，规划、实施或复审这个项目任务。"
+        },
+        "related_errors": []
+      }
+    ],
+    "native_window_refresh": "UNVERIFIED"
+  }
+}

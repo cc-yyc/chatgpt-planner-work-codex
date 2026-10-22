@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-labelledby="title">
+  <title id="title">项目规划助手与 Codex：规划文档与终端执行</title>
+  <rect x="24" y="24" width="464" height="464" rx="116" fill="#2563EB"/>
+  <rect x="118" y="100" width="222" height="284" rx="28" stroke="white" stroke-width="24"/>
+  <path d="M170 172H288M170 226H258M170 280H212" stroke="white" stroke-width="24" stroke-linecap="round"/>
+  <rect x="226" y="250" width="226" height="184" rx="44" fill="#2563EB"/>
+  <rect x="240" y="264" width="198" height="156" rx="30" fill="#171717"/>
+  <path d="M274 308L304 338L274 368" stroke="white" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M334 368H390" stroke="#60A5FA" stroke-width="20" stroke-linecap="round"/>
+</svg>

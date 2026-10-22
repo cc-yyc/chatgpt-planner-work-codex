@@ -1,5 +1,6 @@
 {
   "name": "planner-work-codex-local",
+  "interface": {"displayName": "项目规划助手 · Codex"},
   "plugins": [
     {
       "name": "chatgpt-planner-work-codex",

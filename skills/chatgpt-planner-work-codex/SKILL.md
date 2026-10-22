@@ -6,7 +6,7 @@ description: >-
   handoffs, implementing an approved plan, or reviewing returned results;
   discussion-only requests remain discussion-only.
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   upstream: "long-woo/chatgpt-planner@d2a426fe17c49a68662dc2584ed39e830ce0976d"
 ---
 

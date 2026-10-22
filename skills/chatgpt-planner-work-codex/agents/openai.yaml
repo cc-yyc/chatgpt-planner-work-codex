@@ -1,6 +1,9 @@
 interface:
-  display_name: "ChatGPT Planner · Work + Codex"
-  short_description: "ChatGPT 普通聊天和 Work 规划与复审，Codex 按已确认任务实施并返回验证证据"
+  display_name: "项目规划助手 · Codex"
+  short_description: "在 ChatGPT 和 Work 中规划与复审，交给 Codex 实施并验证"
+  icon_small: "./assets/planner-icon.png"
+  icon_large: "./assets/planner-icon.svg"
+  brand_color: "#2563EB"
   default_prompt: "使用 $chatgpt-planner-work-codex 按当前运行端和我的意图，规划、实施或复审这个项目任务。"
 policy:
   allow_implicit_invocation: true
