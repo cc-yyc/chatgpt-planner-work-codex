@@ -1,0 +1,16 @@
+{
+  "check": "returned case3 JSON against installed schema",
+  "status": "PASS",
+  "schema": "<SKILL_ROOT>\\references\\execution-context.schema.json",
+  "schema_sha256": "15de89822c0b33b60397ab739356823e2202d7c931b93bef810b9a620574751e",
+  "handoff_fields": [
+    "goal",
+    "scope",
+    "non_goals",
+    "implementation_constraints",
+    "acceptance_criteria",
+    "verification"
+  ],
+  "verification_items": 4,
+  "validation_errors": []
+}

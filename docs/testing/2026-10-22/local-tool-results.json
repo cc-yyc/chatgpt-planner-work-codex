@@ -1,0 +1,57 @@
+[
+  {
+    "label": "initial report write attempt",
+    "scope": "sandboxed",
+    "exit_code": 1,
+    "output": "PermissionError: [WinError 5] 拒绝访问。创建 outputs 新目录失败，未生成报告文件。"
+  },
+  {
+    "label": "initial worker case4 attempt",
+    "scope": "sandboxed",
+    "exit_code": 1,
+    "output": "New-Item: Access to the path is denied. 随后读取确认目录与 message.txt 均不存在。"
+  },
+  {
+    "label": "case4 actual create and correction",
+    "scope": "require_escalated; same approved exact directory",
+    "script": "from pathlib import Path\nimport hashlib, json\nroot = Path(r\"<TEST_ROOT>\")\nassert root.parent.is_dir(), \"Missing work parent\"\nassert not root.exists(), \"Refusing to reuse existing directory\"\nroot.mkdir()\ntarget = root / \"message.txt\"\nbefore = b\"hello plannner\"\nafter = b\"hello planner\"\nwith target.open(\"xb\") as stream:\n    stream.write(before)\ncreated = target.read_bytes()\nassert created == before\nwith target.open(\"r+b\") as stream:\n    assert stream.read() == before\n    stream.seek(0)\n    stream.write(after)\n    stream.truncate()\nprint(json.dumps({\n    \"path\":str(target),\n    \"before\":created.decode(\"utf-8\"),\n    \"before_hex\":created.hex(),\n    \"before_byte_length\":len(created),\n    \"before_sha256\":hashlib.sha256(created).hexdigest(),\n    \"written_after\":after.decode(\"utf-8\"),\n    \"after_expected_hex\":after.hex(),\n    \"actual_initial_read\":True,\n    \"final_independent_read\":\"pending\"\n}, ensure_ascii=False))\n",
+    "tool_result": {
+      "chunk_id": "f79a37",
+      "wall_time_seconds": 0.421667,
+      "exit_code": 0,
+      "original_token_count": 123,
+      "output": "{\"path\": \"<TEST_ROOT>\\\\message.txt\", \"before\": \"hello plannner\", \"before_hex\": \"68656c6c6f20706c616e6e6e6572\", \"before_byte_length\": 14, \"before_sha256\": \"64f165fdf0495f767b1f6b7b083d8a90c8e7f5a6cf4fd7b3ed506bad6e258a3a\", \"written_after\": \"hello planner\", \"after_expected_hex\": \"68656c6c6f20706c616e6e6572\", \"actual_initial_read\": true, \"final_independent_read\": \"pending\"}\r\n"
+    }
+  },
+  {
+    "label": "case4 independent readback",
+    "scope": "read-only",
+    "script": "from pathlib import Path\nimport hashlib, json\nroot = Path(r\"<TEST_ROOT>\")\ntarget = root / \"message.txt\"\nactual = target.read_bytes()\nassert actual == b\"hello planner\", repr(actual)\nassert not actual.startswith(b\"\\xef\\xbb\\xbf\")\nassert b\"\\r\" not in actual and b\"\\n\" not in actual\nfiles = sorted(child.name for child in root.iterdir())\nassert files == [\"message.txt\"], files\nprint(json.dumps({\n    \"check\":\"independent final-byte read\",\n    \"status\":\"PASS\",\n    \"path\":str(target),\n    \"actual_content\":actual.decode(\"utf-8\"),\n    \"hex\":actual.hex(),\n    \"byte_length\":len(actual),\n    \"sha256\":hashlib.sha256(actual).hexdigest(),\n    \"bom\":False,\n    \"newline\":False,\n    \"directory_entries\":files,\n    \"output_directory_exists\":Path(r\"<REPORT_ROOT>\").exists()\n}, ensure_ascii=False))\n",
+    "tool_result": {
+      "chunk_id": "befff6",
+      "wall_time_seconds": 0.8506505,
+      "exit_code": 0,
+      "original_token_count": 121,
+      "output": "{\"check\": \"independent final-byte read\", \"status\": \"PASS\", \"path\": \"<TEST_ROOT>\\\\message.txt\", \"actual_content\": \"hello planner\", \"hex\": \"68656c6c6f20706c616e6e6572\", \"byte_length\": 13, \"sha256\": \"330c569e0a07d0909765eccb3babdd5ea71bd49c406eb5f16b00cb75c0ab146c\", \"bom\": false, \"newline\": false, \"directory_entries\": [\"message.txt\"], \"output_directory_exists\": false}\r\n"
+    }
+  },
+  {
+    "label": "case3 schema validation",
+    "scope": "read-only",
+    "script": "import json,re,hashlib\nfrom pathlib import Path\nfrom jsonschema import Draft202012Validator\nresponse = json.loads(r'''\"交接状态：未派发。本例按“没有派发接口”的模拟条件处理；本轮未创建聊天、发送消息或执行项目操作。\\n\\n以下内容可复制给后续 Codex 执行会话。目标项目和目录尚未提供，应由接收方先确认。\\n\\n```json\\n{\\n  \\\"goal\\\": \\\"在本机将全部已保存的记账记录导出为 UTF-8 CSV，字段依次为日期、金额、分类。\\\",\\n  \\\"scope\\\": [\\n    \\\"确认目标项目、现有记录存储方式和导出入口。\\\",\\n    \\\"实现从完整已保存数据集读取记录并导出，避免被界面分页或当前页数据限制。\\\",\\n    \\\"生成 UTF-8 CSV，表头依次为日期、金额、分类，正确处理字段中的逗号、双引号和换行。\\\",\\n    \\\"依据项目现有结构完成相关验证，并返回变更位置、实际检查方法及结果。\\\"\\n  ],\\n  \\\"non_goals\\\": [\\n    \\\"新增云服务或云端存储。\\\",\\n    \\\"增加与本次 CSV 导出无关的功能。\\\"\\n  ],\\n  \\\"implementation_constraints\\\": [\\n    \\\"在本机完成导出，不将记账数据上传到新增外部服务。\\\",\\n    \\\"保持日期和金额既有的业务语义及金额精度。\\\",\\n    \\\"先检查真实项目环境，不假定数据库、框架、文件路径或测试命令。\\\"\\n  ],\\n  \\\"acceptance_criteria\\\": [\\n    \\\"CSV 包含全部已保存记录，每条记录恰好出现一次。\\\",\\n    \\\"字段及顺序为日期、金额、分类。\\\",\\n    \\\"文件采用 UTF-8 编码，中文及 CSV 特殊字符可正确解析。\\\",\\n    \\\"导出操作不改变已保存的记账记录。\\\"\\n  ],\\n  \\\"verification\\\": [\\n    {\\n      \\\"check\\\": \\\"使用已知完整数据集导出，再用 CSV 解析器比较记录数量和内容，确认无遗漏、无重复且不受分页影响。\\\",\\n      \\\"required\\\": true\\n    },\\n    {\\n      \\\"check\\\": \\\"检查 UTF-8 编码、表头顺序，并验证中文、逗号、双引号和换行字段可正确往返解析。\\\",\\n      \\\"required\\\": true\\n    },\\n    {\\n      \\\"check\\\": \\\"比较导出前后的已保存记录，确认内容未被修改。\\\",\\n      \\\"required\\\": true\\n    },\\n    {\\n      \\\"check\\\": \\\"由 Codex 检查项目配置，确定并运行对应测试；返回实际命令、输出及未验证项。\\\",\\n      \\\"required\\\": true\\n    }\\n  ]\\n}\\n```\\n\\n接收方应检查实际环境后按上述范围实施并返回证据。当前仅完成交接说明准备，没有派发回执或实施结果。\"''')\nblocks = re.findall(r\"```json\\s*(.*?)\\s*```\", response, flags=re.S)\nassert len(blocks) == 1\nhandoff = json.loads(blocks[0])\nschema_file = Path(r\"<SKILL_ROOT>\\references\\execution-context.schema.json\")\nschema = json.loads(schema_file.read_text(encoding=\"utf-8-sig\"))\nDraft202012Validator.check_schema(schema)\nerrors = list(Draft202012Validator(schema).iter_errors(handoff))\nassert not errors, str([error.message for error in errors])\nprint(json.dumps({\n    \"check\":\"returned case3 JSON against installed schema\",\n    \"status\":\"PASS\",\n    \"schema\":str(schema_file),\n    \"schema_sha256\":hashlib.sha256(schema_file.read_bytes()).hexdigest(),\n    \"handoff_fields\":list(handoff),\n    \"verification_items\":len(handoff[\"verification\"]),\n    \"validation_errors\":[]\n},ensure_ascii=False))\n",
+    "tool_result": {
+      "chunk_id": "e5ed1e",
+      "wall_time_seconds": 1.8647521999999999,
+      "exit_code": 0,
+      "original_token_count": 114,
+      "output": "{\"check\": \"returned case3 JSON against installed schema\", \"status\": \"PASS\", \"schema\": \"<SKILL_ROOT>\\\\references\\\\execution-context.schema.json\", \"schema_sha256\": \"15de89822c0b33b60397ab739356823e2202d7c931b93bef810b9a620574751e\", \"handoff_fields\": [\"goal\", \"scope\", \"non_goals\", \"implementation_constraints\", \"acceptance_criteria\", \"verification\"], \"verification_items\": 4, \"validation_errors\": []}\r\n"
+    }
+  },
+  {
+    "label": "initial report serialization attempt",
+    "scope": "report generation only",
+    "exit_code": 1,
+    "output": "  File \"<stdin>\", line 4\r\n    data = json.loads(r'''{\"paths\":{\"base\":\"<WORKSPACE>\",\"runId\":\"skill-tests-20261022-f89bcb7c\",\"testDir\":\"<TEST_ROOT>\",\"outDir\":\"<REPORT_ROOT>\"},\"cases\":[{\"id\":1,\"title\":\"纯讨论，不强制 JSON、不实�\r\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^\r\nSyntaxError: unexpected character after line continuation character\r\n",
+    "assessment": "Nested triple quotes in stored validation script caused a Python parse error before any files were written; serializer corrected."
+  }
+]

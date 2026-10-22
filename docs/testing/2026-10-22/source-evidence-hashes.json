@@ -1,0 +1,51 @@
+{
+  "scope": "SHA-256 of original local evidence before path normalization",
+  "source_files": {
+    "behavior-responses.md": {
+      "sha256": "602bf5c69919968ff13173098cc07a35d1dce07d98bb8b656fc9227722ebc438",
+      "bytes": 14246
+    },
+    "case3-handoff.json": {
+      "sha256": "1e9ef688d67d208e717a8ed523fb5af81cf929a6ab38fb7c88955ee187e158e2",
+      "bytes": 1912
+    },
+    "case3-schema-validation.json": {
+      "sha256": "e0403f844479f30143dc50a71f1662cb14d318e18bea577b37e8449d35477cb4",
+      "bytes": 496
+    },
+    "case3-validate.py": {
+      "sha256": "7d334b42e21d8976bcf62edf271a8f689ca6bea3ac4a9cfcdfae2033dc851e56",
+      "bytes": 3397
+    },
+    "case4-execute.py": {
+      "sha256": "ea856477e0209f8eb90f8619e5a8ebade10bb266307893f961ac8a06a2ef61e8",
+      "bytes": 1025
+    },
+    "case4-readback.py": {
+      "sha256": "f755fcd27b6a0bc5169e499a405b2fbfedf8c6d85c365ff1fd40acbea182f356",
+      "bytes": 996
+    },
+    "local-tool-results.json": {
+      "sha256": "ed8d3725cfc7335bdb012e9cef937cd5eb44a7ca78369cdb5ad9051e16cdf9c2",
+      "bytes": 10162
+    },
+    "test-results.json": {
+      "sha256": "50d983e6dd39a9243e0d9ee4ab9d7f694b45a92c17e88c84f31a7d204031bb87",
+      "bytes": 32376
+    },
+    "测试报告.md": {
+      "sha256": "a484df1aa5031176329d190dfded9e66bb88b129d564396831391cd004adac2d",
+      "bytes": 4748
+    }
+  },
+  "original_manifest_sha256": "69d2a60a95bc0e63f20344116756ba9bc49ee786cee70e633e6c11fffe4a0d53",
+  "fixture": {
+    "bytes": 13,
+    "sha256": "330c569e0a07d0909765eccb3babdd5ea71bd49c406eb5f16b00cb75c0ab146c"
+  },
+  "publication_changes": [
+    "replace machine paths with named placeholders",
+    "convert report links to repository-relative links",
+    "include command scripts inside local-tool-results.json; do not duplicate standalone original scripts"
+  ]
+}

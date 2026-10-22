@@ -1,0 +1,34 @@
+{
+  "behavior-responses.md": {
+    "bytes": 14246,
+    "sha256": "602bf5c69919968ff13173098cc07a35d1dce07d98bb8b656fc9227722ebc438"
+  },
+  "case3-handoff.json": {
+    "bytes": 1912,
+    "sha256": "1e9ef688d67d208e717a8ed523fb5af81cf929a6ab38fb7c88955ee187e158e2"
+  },
+  "case3-schema-validation.json": {
+    "bytes": 443,
+    "sha256": "8796859d7083ea5b8b65745a97b6438767fbe3f1cf48e020e73f4cc4cd08cbe1"
+  },
+  "fixtures/message.txt": {
+    "bytes": 13,
+    "sha256": "330c569e0a07d0909765eccb3babdd5ea71bd49c406eb5f16b00cb75c0ab146c"
+  },
+  "local-tool-results.json": {
+    "bytes": 9093,
+    "sha256": "73c58caee110056deb66ad739fef1b7ba4d59266ce25be833679e6bd6f6377ec"
+  },
+  "README.md": {
+    "bytes": 4436,
+    "sha256": "eb300d3f40c66f5c2c815dfbb992a21fc7b5ed8c3f2af24a5c71ab6f0c09dbac"
+  },
+  "source-evidence-hashes.json": {
+    "bytes": 1829,
+    "sha256": "914cd142d7e77f255f9a5e79ba9d460636085600db3925fb5d74d6534fd562e1"
+  },
+  "test-results.json": {
+    "bytes": 30667,
+    "sha256": "58f78f8084d505a9dc85d0b2ff123ee9d93a5cc82689d0199307592810d26cca"
+  }
+}
