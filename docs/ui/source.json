@@ -1,22 +1,33 @@
 {
-  "version": "1.0.2",
+  "version": "1.0.3",
   "mode": "built-in imagegen",
   "use_case": "compositing / logo-brand",
   "inputs": [
     {
-      "role": "primary shape reference",
+      "role": "edit target",
+      "description": "previous white ChatGPT-oriented draft, used to strengthen Codex recognition"
+    },
+    {
+      "role": "ChatGPT knot reference",
       "description": "user-supplied ChatGPT emblem"
     },
     {
-      "role": "outer silhouette reference only",
-      "description": "Codex cloud app icon; terminal glyph excluded",
+      "role": "Codex identity reference",
+      "description": "Codex cloud app icon, including a small >_ glyph recreated in silver",
       "application_version": "26.1016.8120.0",
       "asset": "webview/assets/codex-app-ga-logo-3e5209898ca3.png",
       "sha256": "8e82b26c98a10e45798ce48124515720657f7735fb8d0853b3f087eaa8a6b74e"
     }
   ],
-  "prompt": "Use case: compositing / logo-brand. Create a completely new premium monochrome brand mark for a personal ChatGPT × Codex workflow plugin. Image 1 is the user's ChatGPT interwoven six-loop emblem, use its continuous interlocking ribbon geometry as the primary identity reference. Image 2 is the actual Codex app icon, use ONLY its soft rounded cloud/petal outer silhouette as the supporting identity reference. REMOVE the >_ terminal glyph entirely. Fuse these two shape languages into ONE coherent, beautifully balanced symbol; it must read as an interwoven ChatGPT knot whose outer lobes gently take on the Codex cloud silhouette, not two logos placed side by side and not one logo pasted on the other. Art direction: refined, editorial, quietly luxurious, flat vector-like precision, consistent substantial ribbon widths, deliberate clean negative space, mathematically calm optical balance, legible at 24px. Palette: white and neutral light grey surfaces with restrained graphite-grey separation/contours where needed for readability, strictly achromatic. No blue, violet, colored fills or saturated accents. One front-facing centered mark occupying approximately 78 percent of a square canvas, with generous equal padding; genuine transparent background. The symbol itself should be predominantly white, not predominantly black. No document, clipboard, checklist, checkmark, terminal window, code brackets, greater-than symbol, underscore, badge, app-tile square, lettering, text, wordmark, watermark, mockup scene, fake checkerboard, metallic bevel, glossy rendering, glow, gradient, or cast shadow. Deliver a single finished standalone icon.",
+  "prompt": "Use case: compositing / logo-brand. Redesign the personal ChatGPT × Codex plugin emblem. Input 1 is the current white interwoven mark, an edit target that failed because it only looked like ChatGPT. Input 2 is the ChatGPT knot reference. Input 3 is the actual Codex cloud app icon, the identity reference. Make the Codex connection visually EXPLICIT: the overall outer shape must be the distinct broad, softly scalloped Codex cloud from input 3, not another six-petal ChatGPT rosette. Integrate a recognizable ChatGPT interwoven ribbon knot into the left/upper interior of that cloud, in a clean unified composition. Add a SMALL but clearly formed exact Codex prompt glyph >_ in the lower-right interior, approximately one quarter of the total symbol width. The glyph is LIGHT SILVER GREY, never black, and has no surrounding terminal window, dark square, badge or frame. It should be clear at normal app-icon size. The cloud and knot are predominantly pearl WHITE; use restrained light/mid neutral silver contours and negative-space cuts for structure and legibility. No black or charcoal anywhere; no dark fills. Premium art direction: optically balanced, calm sculptural geometry, clean substantial strokes, generous deliberate negative space, very subtle neutral porcelain depth rather than glossy 3D, no busy detail. The cloud silhouette must remain distinct from the inner knot. Genuine transparent background; a single centered finished 1:1 icon with even padding, occupying about 85 percent of the square. No blue, purple or saturated colors. No text wordmark, document, clipboard, checklist, app tile, large terminal screen, deep shadow, metallic chrome, glow, watermark or fake checkerboard. The only visible characters are the small silver >_ Codex glyph. Prioritize a visibly recognizable Codex cloud PLUS the ChatGPT knot rather than a tiny modification to the ChatGPT knot.",
   "postprocessing": "PNG size export only; generated alpha retained",
-  "generated_source_sha256": "c66bb546191feaa9c18efbcd09a36e00240051fc3f5a8adf62d939f4295a1987",
-  "brand_notice": "Non-official personal derivative. Brand rights remain with their owners; original reference assets are not redistributed."
+  "generated_source_sha256": "01b80be9823b73ac0715ccc05461da4b403f8f529d9e9c4b97be77050f7e6a60",
+  "brand_notice": "Non-official personal derivative. Brand rights remain with their owners; original reference assets are not redistributed.",
+  "approved_direction": "White Codex cloud, ChatGPT knot, small silver >_ prompt glyph; no black fill or terminal window",
+  "opaque_color_check": {
+    "alpha_threshold": 250,
+    "minimum_rgb_channel": 128,
+    "near_black_opaque_pixels": 0,
+    "near_black_definition": "all RGB channels below 64"
+  }
 }

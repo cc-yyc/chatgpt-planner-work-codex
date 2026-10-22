@@ -1,6 +1,6 @@
-# ChatGPT × Codex · 白色融合标识
+# ChatGPT × Codex · 银白融合标识
 
-以 ChatGPT 的连续编织结构为主体，融合 Codex 图标的云形轮廓。白色主体、中性灰边缘与透明背景组成单一标识。
+以白色 Codex 云形承载 ChatGPT 编织结，右下角加入小号银灰色 `>_`。白色与浅银灰构成图标主体，没有黑色填充或终端窗口。
 
 ![白色外观预览](white-preview.png)
 
@@ -8,7 +8,7 @@
 |---|---|
 | 名称 | ChatGPT × Codex |
 | 简介 | 在 ChatGPT 和 Work 中规划与复审，交给 Codex 实施并验证 |
-| 强调色 | 浅色主题 `#525252`，深色主题 `#E5E5E5` |
+| 强调色 | 浅色主题 `#8C8C8C`，深色主题 `#D6D6D6` |
 | 图标 | 透明 PNG，400 px 与 512 px |
 | 调用名 | `$chatgpt-planner-work-codex` |
 

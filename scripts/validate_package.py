@@ -74,7 +74,9 @@ def validate() -> dict:
     check('discarded icon resources absent', all(not (ROOT / relative).exists() for relative in [
         'skills/chatgpt-planner-work-codex/assets/planner-icon.png',
         'skills/chatgpt-planner-work-codex/assets/planner-icon.svg',
-        'docs/ui/icon-preview.png', 'docs/ui/polish-review.md', 'docs/ui/discovery.json']))
+        'docs/ui/icon-preview.png', 'docs/ui/polish-review.md', 'docs/ui/discovery.json',
+        'skills/chatgpt-planner-work-codex/assets/chatgpt-codex-white.png',
+        'skills/chatgpt-planner-work-codex/assets/chatgpt-codex-white-large.png']))
     check('card accents are achromatic', all(color[1:3].lower() == color[3:5].lower() == color[5:7].lower() for color in [skill_ui['brand_color'], plugin_ui['brandColor'], plugin_ui['brandColorDark']]))
     for field in ['logo', 'composerIcon']:
         icon_path = (ROOT / plugin_ui[field]).resolve()

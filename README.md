@@ -2,13 +2,13 @@
 
 ChatGPT 普通聊天和 Work 负责讨论、研究、规划、验收与复审；Codex 负责检查实际环境、修改项目、执行操作和验证，并反馈证据。只想探讨时，两端都停留在讨论阶段。
 
-这是基于 [long-woo/chatgpt-planner](https://github.com/long-woo/chatgpt-planner) 3.1.0 的非官方修改版，定制版版本为 1.0.2。原版作者版权声明和完整 MIT 许可保留在 [LICENSE](LICENSE)。修改清单与资源处理见 [NOTICE.md](NOTICE.md)，原始文件哈希见 [UPSTREAM.json](UPSTREAM.json)。本项目不代表原作者或 OpenAI，也不暗示获得其认可。
+这是基于 [long-woo/chatgpt-planner](https://github.com/long-woo/chatgpt-planner) 3.1.0 的非官方修改版，定制版版本为 1.0.3。原版作者版权声明和完整 MIT 许可保留在 [LICENSE](LICENSE)。修改清单与资源处理见 [NOTICE.md](NOTICE.md)，原始文件哈希见 [UPSTREAM.json](UPSTREAM.json)。本项目不代表原作者或 OpenAI，也不暗示获得其认可。
 
 ## 卡片外观
 
-<img src="skills/chatgpt-planner-work-codex/assets/chatgpt-codex-white-large.png" width="96" height="96" alt="白色 ChatGPT 与 Codex 融合标识">
+<img src="skills/chatgpt-planner-work-codex/assets/chatgpt-codex-silver-large.png" width="96" height="96" alt="白色 ChatGPT 与 Codex 融合标识">
 
-显示名称为 **ChatGPT × Codex**。白色编织结构与柔和云形轮廓融合为一个标识，使用透明背景与中性灰描边；调用名仍为 `$chatgpt-planner-work-codex`。
+显示名称为 **ChatGPT × Codex**。以白色 Codex 云形承载 ChatGPT 编织结，右下角保留银灰色小号 `>_`，使用透明背景；调用名仍为 `$chatgpt-planner-work-codex`。
 
 简介为“在 ChatGPT 和 Work 中规划与复审，交给 Codex 实施并验证”。[外观与来源](docs/ui/README.md)包含白色预览、生成说明与检查范围。
 

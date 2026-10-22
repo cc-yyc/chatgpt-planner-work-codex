@@ -1,7 +1,8 @@
 {
   "status": "PASS",
+  "version": "1.0.3",
   "tool": "taste-skill inspect.mjs --app",
-  "at": "2026-10-22T12:51:49.904Z",
+  "at": "2026-10-22T13:17:55.417Z",
   "findings": [],
   "viewports": [
     {

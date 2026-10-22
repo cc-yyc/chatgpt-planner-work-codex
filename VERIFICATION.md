@@ -40,12 +40,8 @@
 
 [完整报告、测试请求、回答及路径归一后的命令证据](docs/testing/2026-10-22/README.md)。原始本机证据未改动。
 
-## 1.0.2 白色融合标识
+## 1.0.3 用户确认的银白融合标识
 
-按用户要求舍弃原 UI，改为 ChatGPT 编织结构与 Codex 云形轮廓融合的白色标识。终端符号、文档图形、旧蓝色图标及旧预览从当前分发树移除；调用名、默认提示词、自动调用策略和行为规则不变。
+白色 Codex 云形承载 ChatGPT 编织结，右下角保留小号银灰色 `>_`。原始图没有黑色不透明像素或终端窗口；直接使用用户确认的 400/512 px PNG 导出并保留透明通道。[外观说明](docs/ui/README.md)与[完整生成提示词](docs/ui/source.json)记录来源和视觉取舍。调用名、默认提示词、自动调用策略及行为规则不变。此前 Chat/Work 集成与记账 CSV 的未验证项继续保留。
 
-图标使用内置 imagegen 生成，仅做 400 px 与 512 px PNG 尺寸导出，保留透明通道。[外观说明与验证范围](docs/ui/README.md)；[生成来源](docs/ui/source.json)。这是一份插件外观更新，不将此前 Chat/Work 集成或记账 CSV 的未验证项改记为通过。
-
-`quick_validate.py` 通过。taste-skill 浏览器检查覆盖 390、768、1440 px，无发现项，六张截图均已查看。独立技能安装后 24 文件与源码逐字节一致；Codex 自带 app-server 在两个目录发现唯一启用的独立技能，名称、图标和配色正确，无相关加载错误。18 个 references/templates 文件、LICENSE、默认提示词与调用策略相对 1.0.0 基线保持一致。实际证据见 [视觉检查](docs/ui/design-notes.md)；原生客户端当前窗口的刷新和布局仍未验证。
-
-最终执行 `python -X utf8 scripts/validate_package.py`：39 项包检查、70 个相对链接、10 个交接 Schema 案例全部通过。浏览器检查的执行方式为 `node <taste-skill>/scripts/inspect.mjs ui-preview.html --app --out <local-evidence> --widths 1440,768,390 --json`；这些占位符表示本机技能和证据目录，不属于插件运行依赖。
+`quick_validate.py` 通过。正式分发目录的 taste-skill 浏览器检查覆盖 390/768/1440 px，无发现项，六张截图均已查看。独立安装的 24 文件与源码逐字节一致；Codex 自带 app-server 在两个目录均读到唯一启用的独立技能、新图标路径和银灰配色，无相关错误。与 1.0.0 比较，18 个 references/templates 文件、LICENSE、默认提示词和调用策略一致。原生客户端当前窗口刷新仍未直接观察。

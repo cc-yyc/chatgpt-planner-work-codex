@@ -204,6 +204,6 @@
   ],
   "download_method": "GitHub connector for text; authenticated GitHub REST blob API for original visual assets",
   "snapshot_scope": "All 22 tracked files at the pinned commit; not a clone of Git history",
-  "custom_version": "1.0.2",
+  "custom_version": "1.0.3",
   "custom_repository": "https://github.com/cc-yyc/chatgpt-planner-work-codex"
 }

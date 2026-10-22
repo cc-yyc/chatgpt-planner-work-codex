@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "protocol": "Codex app-server skills/list",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "binary": "<Codex desktop bundled codex.exe>",
   "created_chat_or_turn": false,
   "scopes": [
@@ -13,11 +13,11 @@
       "interface": {
         "displayName": "ChatGPT × Codex",
         "shortDescription": "在 ChatGPT 和 Work 中规划与复审，交给 Codex 实施并验证",
-        "iconSmall": "<personal-skills>/chatgpt-planner-work-codex/assets/chatgpt-codex-white.png",
-        "iconLarge": "<personal-skills>/chatgpt-planner-work-codex/assets/chatgpt-codex-white-large.png",
+        "iconSmall": "<personal-skills>/chatgpt-planner-work-codex/assets/chatgpt-codex-silver.png",
+        "iconLarge": "<personal-skills>/chatgpt-planner-work-codex/assets/chatgpt-codex-silver-large.png",
         "iconSmallUrl": null,
         "iconLargeUrl": null,
-        "brandColor": "#525252",
+        "brandColor": "#8C8C8C",
         "defaultPrompt": "使用 $chatgpt-planner-work-codex 按当前运行端和我的意图，规划、实施或复审这个项目任务。"
       },
       "related_errors": []
@@ -30,11 +30,11 @@
       "interface": {
         "displayName": "ChatGPT × Codex",
         "shortDescription": "在 ChatGPT 和 Work 中规划与复审，交给 Codex 实施并验证",
-        "iconSmall": "<personal-skills>/chatgpt-planner-work-codex/assets/chatgpt-codex-white.png",
-        "iconLarge": "<personal-skills>/chatgpt-planner-work-codex/assets/chatgpt-codex-white-large.png",
+        "iconSmall": "<personal-skills>/chatgpt-planner-work-codex/assets/chatgpt-codex-silver.png",
+        "iconLarge": "<personal-skills>/chatgpt-planner-work-codex/assets/chatgpt-codex-silver-large.png",
         "iconSmallUrl": null,
         "iconLargeUrl": null,
-        "brandColor": "#525252",
+        "brandColor": "#8C8C8C",
         "defaultPrompt": "使用 $chatgpt-planner-work-codex 按当前运行端和我的意图，规划、实施或复审这个项目任务。"
       },
       "related_errors": []
