@@ -1,18 +1,18 @@
 {
   "name": "chatgpt-planner-work-codex",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "在 ChatGPT 和 Work 中规划与复审，交给 Codex 实施并验证",
   "skills": "./skills/",
   "interface": {
-    "displayName": "项目规划助手 · Codex",
+    "displayName": "ChatGPT × Codex",
     "shortDescription": "在 ChatGPT 和 Work 中规划与复审，交给 Codex 实施并验证",
     "longDescription": "梳理目标、拆分任务和明确验收标准，由 Codex 实施并返回证据，再按证据复审。",
     "developerName": "cc-yyc",
     "category": "Productivity",
     "capabilities": [],
-    "brandColor": "#2563EB",
-    "brandColorDark": "#60A5FA",
-    "composerIcon": "./skills/chatgpt-planner-work-codex/assets/planner-icon.png",
-    "logo": "./skills/chatgpt-planner-work-codex/assets/planner-icon.svg"
+    "brandColor": "#525252",
+    "brandColorDark": "#E5E5E5",
+    "composerIcon": "./skills/chatgpt-planner-work-codex/assets/chatgpt-codex-white.png",
+    "logo": "./skills/chatgpt-planner-work-codex/assets/chatgpt-codex-white-large.png"
   }
 }

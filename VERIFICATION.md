@@ -40,12 +40,12 @@
 
 [完整报告、测试请求、回答及路径归一后的命令证据](docs/testing/2026-10-22/README.md)。原始本机证据未改动。
 
-## 1.0.1 技能卡片外观
+## 1.0.2 白色融合标识
 
-按用户选择调整技能卡片的名称、简介、图标和配色，并按追加要求组合规划助手与 Codex 的视觉元素。显示名为“项目规划助手 · Codex”，新增原创“规划文档＋深色终端”SVG 与 400×400 PNG 图标；同时补齐便携插件、兼容插件和独立技能的展示元数据。默认提示词、自动调用策略以及规划、执行与复审规则不变。
+按用户要求舍弃原 UI，改为 ChatGPT 编织结构与 Codex 云形轮廓融合的白色标识。终端符号、文档图形、旧蓝色图标及旧预览从当前分发树移除；调用名、默认提示词、自动调用策略和行为规则不变。
 
-`python scripts/validate_package.py` 的 36 项检查通过，包含两个入口的元数据一致性、图标路径与尺寸、SVG 内容和十个交接 Schema 案例。系统技能格式校验通过；明暗背景及 16、24、32、48 px 图标预览已本地渲染并检查。预览见 [外观说明](docs/ui/README.md)。
+图标使用内置 imagegen 生成，仅做 400 px 与 512 px PNG 尺寸导出，保留透明通道。[外观说明与验证范围](docs/ui/README.md)；[生成来源](docs/ui/source.json)。这是一份插件外观更新，不将此前 Chat/Work 集成或记账 CSV 的未验证项改记为通过。
 
-原生卡片布局及当前窗口的缓存刷新未直接观察，不能把元数据校验或图标预览当作原生 UI 已刷新的证据。此前功能与跨端集成未验证项继续保留。
+`quick_validate.py` 通过。taste-skill 浏览器检查覆盖 390、768、1440 px，无发现项，六张截图均已查看。独立技能安装后 24 文件与源码逐字节一致；Codex 自带 app-server 在两个目录发现唯一启用的独立技能，名称、图标和配色正确，无相关加载错误。18 个 references/templates 文件、LICENSE、默认提示词与调用策略相对 1.0.0 基线保持一致。实际证据见 [视觉检查](docs/ui/design-notes.md)；原生客户端当前窗口的刷新和布局仍未验证。
 
-独立 app-server 的 `skills/list` 在两个工作目录均返回唯一启用的 user 技能，`pluginId=null`，显示名为“项目规划助手 · Codex”，小图标、SVG 图标和 `#2563EB` 配色已被后端识别，无相关加载错误；没有创建聊天或执行任务。[路径归一后的发现结果](docs/ui/discovery.json)。首次沙箱启动受运行时状态目录权限影响，受控只读重试通过。
+最终执行 `python -X utf8 scripts/validate_package.py`：39 项包检查、70 个相对链接、10 个交接 Schema 案例全部通过。浏览器检查的执行方式为 `node <taste-skill>/scripts/inspect.mjs ui-preview.html --app --out <local-evidence> --widths 1440,768,390 --json`；这些占位符表示本机技能和证据目录，不属于插件运行依赖。

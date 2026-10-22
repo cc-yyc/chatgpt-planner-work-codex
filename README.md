@@ -2,19 +2,19 @@
 
 ChatGPT 普通聊天和 Work 负责讨论、研究、规划、验收与复审；Codex 负责检查实际环境、修改项目、执行操作和验证，并反馈证据。只想探讨时，两端都停留在讨论阶段。
 
-这是基于 [long-woo/chatgpt-planner](https://github.com/long-woo/chatgpt-planner) 3.1.0 的非官方修改版，定制版版本为 1.0.1。原版作者版权声明和完整 MIT 许可保留在 [LICENSE](LICENSE)。修改清单与资源处理见 [NOTICE.md](NOTICE.md)，原始文件哈希见 [UPSTREAM.json](UPSTREAM.json)。本项目不代表原作者或 OpenAI，也不暗示获得其认可。
+这是基于 [long-woo/chatgpt-planner](https://github.com/long-woo/chatgpt-planner) 3.1.0 的非官方修改版，定制版版本为 1.0.2。原版作者版权声明和完整 MIT 许可保留在 [LICENSE](LICENSE)。修改清单与资源处理见 [NOTICE.md](NOTICE.md)，原始文件哈希见 [UPSTREAM.json](UPSTREAM.json)。本项目不代表原作者或 OpenAI，也不暗示获得其认可。
 
 ## 卡片外观
 
-<img src="skills/chatgpt-planner-work-codex/assets/planner-icon.svg" width="64" height="64" alt="规划文档与 Codex 终端组合图标">
+<img src="skills/chatgpt-planner-work-codex/assets/chatgpt-codex-white-large.png" width="96" height="96" alt="白色 ChatGPT 与 Codex 融合标识">
 
-显示名称为 **项目规划助手 · Codex**，简介为“在 ChatGPT 和 Work 中规划与复审，交给 Codex 实施并验证”。将蓝色规划文档与深色终端符号组合，使用简洁的黑白灰卡片背景；主色为蓝色 `#2563EB`，深色主题强调色为 `#60A5FA`。技能调用名仍为 `$chatgpt-planner-work-codex`。
+显示名称为 **ChatGPT × Codex**。白色编织结构与柔和云形轮廓融合为一个标识，使用透明背景与中性灰描边；调用名仍为 `$chatgpt-planner-work-codex`。
 
-图标与明暗背景预览见 [外观说明](docs/ui/README.md)。卡片布局由客户端控制，示意图不是原生界面截图。
+简介为“在 ChatGPT 和 Work 中规划与复审，交给 Codex 实施并验证”。[外观与来源](docs/ui/README.md)包含白色预览、生成说明与检查范围。
 
 ## 使用
 
-1. 在已安装本插件的 ChatGPT 普通聊天或 Work 中，用技能选择器选择显示名 `项目规划助手 · Codex`：先比较方案、拆解任务、明确边界和验收方法。普通讨论不强制返回 JSON。
+1. 在已安装本插件的 ChatGPT 普通聊天或 Work 中，用技能选择器选择显示名 `ChatGPT × Codex`：先比较方案、拆解任务、明确边界和验收方法。普通讨论不强制返回 JSON。
 2. 准备实施时，规划端给出六字段任务说明。若没有可用且已获授权的派发接口，复制说明给 Codex；“说明已生成”不表示“任务已派发”。
 3. 在 Codex 独立技能列表选择 `$chatgpt-planner-work-codex`，粘贴任务说明并要求实施。Codex 按真实环境实现、运行相关验证、返回证据。如果选择插件安装形式，完整名字为 `$chatgpt-planner-work-codex:chatgpt-planner-work-codex`，从插件入口管理。
 4. 把证据带回规划端复审。未运行的检查保持“未验证”，没有经过规划端复审的结果保持“待复审”。

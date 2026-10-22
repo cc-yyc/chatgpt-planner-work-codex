@@ -8,7 +8,6 @@ import re
 import struct
 from pathlib import Path
 from urllib.parse import unquote, urlparse
-from xml.etree import ElementTree
 
 import yaml
 from jsonschema import Draft202012Validator
@@ -69,8 +68,14 @@ def validate() -> dict:
         check(field + ' exists inside skill', icon_path.is_relative_to(SKILL) and icon_path.is_file())
     png = (SKILL / skill_ui['icon_small']).read_bytes()
     check('small icon is square 400px PNG', png[:8] == b'\x89PNG\r\n\x1a\n' and struct.unpack('>II', png[16:24]) == (400, 400))
-    svg = ElementTree.fromstring((SKILL / skill_ui['icon_large']).read_bytes())
-    check('SVG icon has no active or external content', svg.tag == '{http://www.w3.org/2000/svg}svg' and all(element.tag.split('}')[-1] not in {'script', 'foreignObject', 'image', 'use'} and not any(key.split('}')[-1].lower().startswith('on') or key.split('}')[-1] == 'href' for key in element.attrib) for element in svg.iter()))
+    large_png = (SKILL / skill_ui['icon_large']).read_bytes()
+    check('large icon is square 512px PNG', large_png[:8] == b'\x89PNG\r\n\x1a\n' and struct.unpack('>II', large_png[16:24]) == (512, 512))
+    check('both icons preserve RGBA alpha', png[25] == large_png[25] == 6)
+    check('discarded icon resources absent', all(not (ROOT / relative).exists() for relative in [
+        'skills/chatgpt-planner-work-codex/assets/planner-icon.png',
+        'skills/chatgpt-planner-work-codex/assets/planner-icon.svg',
+        'docs/ui/icon-preview.png', 'docs/ui/polish-review.md', 'docs/ui/discovery.json']))
+    check('card accents are achromatic', all(color[1:3].lower() == color[3:5].lower() == color[5:7].lower() for color in [skill_ui['brand_color'], plugin_ui['brandColor'], plugin_ui['brandColorDark']]))
     for field in ['logo', 'composerIcon']:
         icon_path = (ROOT / plugin_ui[field]).resolve()
         check('plugin ' + field + ' resolves inside package', icon_path.is_relative_to(ROOT) and icon_path.is_file())

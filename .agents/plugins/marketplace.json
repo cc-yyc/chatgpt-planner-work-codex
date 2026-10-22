@@ -1,11 +1,19 @@
 {
   "name": "planner-work-codex-local",
-  "interface": {"displayName": "项目规划助手 · Codex"},
+  "interface": {
+    "displayName": "ChatGPT × Codex"
+  },
   "plugins": [
     {
       "name": "chatgpt-planner-work-codex",
-      "source": {"source": "local", "path": "./"},
-      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
       "category": "Productivity"
     }
   ]
