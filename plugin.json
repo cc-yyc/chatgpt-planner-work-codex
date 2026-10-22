@@ -1,0 +1,7 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "chatgpt-planner-work-codex",
+  "version": "1.0.0",
+  "description": "ChatGPT 普通聊天和 Work 负责规划与复审，Codex 负责实施与验证。",
+  "license": "MIT"
+}

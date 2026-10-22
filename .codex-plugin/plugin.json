@@ -1,0 +1,6 @@
+{
+  "name": "chatgpt-planner-work-codex",
+  "version": "1.0.0",
+  "description": "ChatGPT 普通聊天和 Work 规划，Codex 实施，按证据复审。",
+  "skills": "./skills/"
+}

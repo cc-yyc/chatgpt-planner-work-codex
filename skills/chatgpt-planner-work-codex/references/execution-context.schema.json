@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Planner to Codex execution context",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["goal", "scope", "non_goals", "implementation_constraints", "acceptance_criteria", "verification"],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "texts": {"type": "array", "items": {"$ref": "#/$defs/text"}}
+  },
+  "properties": {
+    "goal": {"$ref": "#/$defs/text"},
+    "scope": {"allOf": [{"$ref": "#/$defs/texts"}], "minItems": 1},
+    "non_goals": {"$ref": "#/$defs/texts"},
+    "implementation_constraints": {"$ref": "#/$defs/texts"},
+    "acceptance_criteria": {"allOf": [{"$ref": "#/$defs/texts"}], "minItems": 1},
+    "verification": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["check", "required"],
+        "properties": {"check": {"$ref": "#/$defs/text"}, "required": {"type": "boolean"}}
+      }
+    }
+  }
+}

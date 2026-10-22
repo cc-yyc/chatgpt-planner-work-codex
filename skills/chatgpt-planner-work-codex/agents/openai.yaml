@@ -1,0 +1,6 @@
+interface:
+  display_name: "ChatGPT Planner · Work + Codex"
+  short_description: "ChatGPT 普通聊天和 Work 规划与复审，Codex 按已确认任务实施并返回验证证据"
+  default_prompt: "使用 $chatgpt-planner-work-codex 按当前运行端和我的意图，规划、实施或复审这个项目任务。"
+policy:
+  allow_implicit_invocation: true

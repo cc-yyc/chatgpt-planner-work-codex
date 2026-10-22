@@ -1,0 +1,209 @@
+{
+  "repository": "https://github.com/long-woo/chatgpt-planner",
+  "commit": "d2a426fe17c49a68662dc2584ed39e830ce0976d",
+  "version": "3.1.0",
+  "files": [
+    {
+      "path": ".gitignore",
+      "status": "verified",
+      "git_blob_sha": "496ee2ca6a2f08396a4076fe43dedf3dc0da8b6d",
+      "expected_git_blob_sha": "496ee2ca6a2f08396a4076fe43dedf3dc0da8b6d",
+      "sha256": "e2eb93a61ffd7877ea5c751abcb3a618e8e2e9a2073a27f66d4114fe10819f86",
+      "bytes": 9,
+      "redistributed": true
+    },
+    {
+      "path": "LICENSE",
+      "status": "verified",
+      "git_blob_sha": "f5a26c40d12d066646eff597b50f916aa4fa35d3",
+      "expected_git_blob_sha": "f5a26c40d12d066646eff597b50f916aa4fa35d3",
+      "sha256": "b9145d0d7bc2bfb82fdd05a1db6a52cb7fe0980577c1ece81e82c20555db6ace",
+      "bytes": 1061,
+      "redistributed": true
+    },
+    {
+      "path": "README.md",
+      "status": "verified",
+      "git_blob_sha": "a04add0d0d0540106c0aafbb2de75a3346692192",
+      "expected_git_blob_sha": "a04add0d0d0540106c0aafbb2de75a3346692192",
+      "sha256": "bbfcd2cc1d0286e76a53a876ebe1e60260df2260a50f4802462b0eafc1fa8c42",
+      "bytes": 8248,
+      "redistributed": true
+    },
+    {
+      "path": "SKILL.md",
+      "status": "verified",
+      "git_blob_sha": "ad3876e38c7934a4f4b765d732adcd0a63294fa3",
+      "expected_git_blob_sha": "ad3876e38c7934a4f4b765d732adcd0a63294fa3",
+      "sha256": "0b462deed8b854a9b9d5005561d607bfd8542ad5e6be60f38343542452b76b75",
+      "bytes": 9456,
+      "redistributed": true
+    },
+    {
+      "path": "assets/icon.svg",
+      "status": "verified",
+      "git_blob_sha": "50073e0095d3dfc57e7dc977e532f10fe4de528f",
+      "expected_git_blob_sha": "50073e0095d3dfc57e7dc977e532f10fe4de528f",
+      "sha256": "1c3b4df83c2c1986ac2051b95086471a8dd5179c936135b07d89d5042555cf70",
+      "bytes": 731534,
+      "redistributed": false
+    },
+    {
+      "path": "assets/logo.png",
+      "status": "verified",
+      "git_blob_sha": "d02aeb458e2076f1654bb3f681d7451c6760387d",
+      "expected_git_blob_sha": "d02aeb458e2076f1654bb3f681d7451c6760387d",
+      "sha256": "d5112cbc5d0fce50c89023c0158b294ef7736aa21760f52e6fd6015f1b6bd24c",
+      "bytes": 548496,
+      "redistributed": false
+    },
+    {
+      "path": "metadata.json",
+      "status": "verified",
+      "git_blob_sha": "ae02ffcf0b39b30e3d6bddd5c06d8aefbf107a48",
+      "expected_git_blob_sha": "ae02ffcf0b39b30e3d6bddd5c06d8aefbf107a48",
+      "sha256": "7b237ee9e7d823d14a2f96e98c1fe6a487bb6db1c340da75ba5f9656f4e0baa7",
+      "bytes": 97,
+      "redistributed": true
+    },
+    {
+      "path": "references/auto-ui-design.md",
+      "status": "verified",
+      "git_blob_sha": "9a9c4ab5087a515c3c81f6538f95d7a12813006f",
+      "expected_git_blob_sha": "9a9c4ab5087a515c3c81f6538f95d7a12813006f",
+      "sha256": "6678fdbd82767c60456889339f4df2a60be04c28247cce2b8897089887bd76e7",
+      "bytes": 4220,
+      "redistributed": true
+    },
+    {
+      "path": "references/browser-workflow.md",
+      "status": "verified",
+      "git_blob_sha": "7080ab6e9bec85859c46f724e9cbfba27c20eafd",
+      "expected_git_blob_sha": "7080ab6e9bec85859c46f724e9cbfba27c20eafd",
+      "sha256": "85060f3e8f9a805babbd833847af205a2815fc285ad853c660471b483e0e2e4b",
+      "bytes": 2517,
+      "redistributed": true
+    },
+    {
+      "path": "references/decision-records.md",
+      "status": "verified",
+      "git_blob_sha": "d6080159554ecfc0db8352c5b3824684daae742c",
+      "expected_git_blob_sha": "d6080159554ecfc0db8352c5b3824684daae742c",
+      "sha256": "7e02f018adc224986930ec0030043ae529fe340e1250da28308605d5c80154e6",
+      "bytes": 1420,
+      "redistributed": true
+    },
+    {
+      "path": "references/execution-context.md",
+      "status": "verified",
+      "git_blob_sha": "a01dafd019db5dcfb90f0f5ea374b9fb744c981b",
+      "expected_git_blob_sha": "a01dafd019db5dcfb90f0f5ea374b9fb744c981b",
+      "sha256": "46a2e1e4971de7a4f779e965b1d16d1487fb14e68a9031328db46fe83810027e",
+      "bytes": 2791,
+      "redistributed": true
+    },
+    {
+      "path": "references/failure-handling.md",
+      "status": "verified",
+      "git_blob_sha": "6da414ad2bd212a82290e0570028b3e5fec29e8a",
+      "expected_git_blob_sha": "6da414ad2bd212a82290e0570028b3e5fec29e8a",
+      "sha256": "cc81daea9d2032d1b7c835cbc9b6dba47c453123b1a5836fa01f4dd0e3121598",
+      "bytes": 2502,
+      "redistributed": true
+    },
+    {
+      "path": "references/index.md",
+      "status": "verified",
+      "git_blob_sha": "8fe71949f37fc5f15f6f5f0db4a4fa1e6e276208",
+      "expected_git_blob_sha": "8fe71949f37fc5f15f6f5f0db4a4fa1e6e276208",
+      "sha256": "a9abb8699656c614acd964cd52ed0e69b7fdb806b083dd684e6154d273e284bc",
+      "bytes": 1718,
+      "redistributed": true
+    },
+    {
+      "path": "references/lite-workflow.md",
+      "status": "verified",
+      "git_blob_sha": "1485a5a61904382c899ad46b0cbd89b86652888d",
+      "expected_git_blob_sha": "1485a5a61904382c899ad46b0cbd89b86652888d",
+      "sha256": "92d3d6f2e915ae4138dc1f1f82fcc6d15ac8303731348de40c7ec0ee4dbf1482",
+      "bytes": 2142,
+      "redistributed": true
+    },
+    {
+      "path": "references/optional-artifacts.md",
+      "status": "verified",
+      "git_blob_sha": "0813bb87c1d4669fb5d01ca8b10a25c2d5276128",
+      "expected_git_blob_sha": "0813bb87c1d4669fb5d01ca8b10a25c2d5276128",
+      "sha256": "d9a6f30ba7c5eb4a79969a8b457fbd0bdd5b33f92bd62bcd9b9406468a13f613",
+      "bytes": 1435,
+      "redistributed": true
+    },
+    {
+      "path": "references/planner-protocol.md",
+      "status": "verified",
+      "git_blob_sha": "30592eea72f32e4e40a2407fb1ddf56f6562fe81",
+      "expected_git_blob_sha": "30592eea72f32e4e40a2407fb1ddf56f6562fe81",
+      "sha256": "38294aa0eb0d05331b071caa0eedc8ed5739d984babc638028ed26a887df7381",
+      "bytes": 2977,
+      "redistributed": true
+    },
+    {
+      "path": "references/reviewer-protocol.md",
+      "status": "verified",
+      "git_blob_sha": "bf75ad1952c2ee29c52fa6a91f7e9f7c30f9b9a9",
+      "expected_git_blob_sha": "bf75ad1952c2ee29c52fa6a91f7e9f7c30f9b9a9",
+      "sha256": "c98c9b9f6d56a4dcdb5f44d0468c3fd8fa6df18768c1e5f18475104513024d83",
+      "bytes": 1466,
+      "redistributed": true
+    },
+    {
+      "path": "references/standard-workflow.md",
+      "status": "verified",
+      "git_blob_sha": "2026cec5a1502f390b0a890cf0ce7093afcc07a2",
+      "expected_git_blob_sha": "2026cec5a1502f390b0a890cf0ce7093afcc07a2",
+      "sha256": "59087921e4bc3b052ad46162d29b87751e06b6eacfda8d342a4b1bafb25aacdb",
+      "bytes": 1511,
+      "redistributed": true
+    },
+    {
+      "path": "references/ui-design-context.md",
+      "status": "verified",
+      "git_blob_sha": "de899eaa336b2b746f718ece6f15b8bd757d7c3f",
+      "expected_git_blob_sha": "de899eaa336b2b746f718ece6f15b8bd757d7c3f",
+      "sha256": "8725952f17b5a2a3d36f899b111c8122b0af26f38e2030f6c930651d5ad9d8ce",
+      "bytes": 2895,
+      "redistributed": true
+    },
+    {
+      "path": "references/workflow-selection.md",
+      "status": "verified",
+      "git_blob_sha": "423ad6a9f6c59790b132fdf93ea8565958c9ecdc",
+      "expected_git_blob_sha": "423ad6a9f6c59790b132fdf93ea8565958c9ecdc",
+      "sha256": "e8cd357e6dcbbad84caa894f46d60a7742eaf4f6dcaa2f33c136471e0e8a3a3a",
+      "bytes": 2922,
+      "redistributed": true
+    },
+    {
+      "path": "references/workflow.md",
+      "status": "verified",
+      "git_blob_sha": "5df894b9f4e3462838760bff4fdc70e308ddf1a2",
+      "expected_git_blob_sha": "5df894b9f4e3462838760bff4fdc70e308ddf1a2",
+      "sha256": "399baae923f5c2c339f0a0332c845f38d42dff5c13967b88061343d2158b9403",
+      "bytes": 2882,
+      "redistributed": true
+    },
+    {
+      "path": "templates/decision-records.md",
+      "status": "verified",
+      "git_blob_sha": "689ccfaeb02128301c8f2f78a0ada9b45a066c5d",
+      "expected_git_blob_sha": "689ccfaeb02128301c8f2f78a0ada9b45a066c5d",
+      "sha256": "2abd9bb0c3aebe98990e730d5314c58a3803f3fbb4cc9dd67968300fd0d97474",
+      "bytes": 209,
+      "redistributed": true
+    }
+  ],
+  "download_method": "GitHub connector for text; authenticated GitHub REST blob API for original visual assets",
+  "snapshot_scope": "All 22 tracked files at the pinned commit; not a clone of Git history",
+  "custom_version": "1.0.0",
+  "custom_repository": "https://github.com/cc-yyc/chatgpt-planner-work-codex"
+}
